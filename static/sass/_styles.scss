@@ -1,0 +1,223 @@
+/* --- Primary Colors ---*/
+$cyan: hsl(179, 62%, 43%);
+$bright-yellow: hsl(71, 73%, 54%);
+
+/* --- Neutral Colors ---*/
+$light-gray: hsl(204, 43%, 93%);
+$grayish-blue: hsl(218, 22%, 67%);
+$white: #ffffff;
+
+/* --- Sizes ---*/
+$width: 635px;
+$height: 475px;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Karla', sans-serif;
+	font-size: 16px;
+	background-color: $light-gray;
+}
+
+h3 {
+	margin: 0;
+}
+
+@mixin xs {
+	@media (min-width: 375px) and (max-width: 659px) {
+		@content;
+	}
+}
+
+@mixin sm {
+	@media (min-width: 660px) and (max-width: 767px) {
+		@content;
+	}
+}
+
+.container {
+	display: flex;
+  	width: 100vw;
+  	height: 100vh;
+  	justify-content: center;
+  	align-items: center;
+
+  	@include xs {
+  		height: 135vh;
+  	}
+}
+
+.wrapper {
+	width: $width;
+	height: $height;
+	border-radius: 5px;
+
+	@include xs {
+		width: 90%;
+ 		height: auto;
+	}
+}
+
+.primary-section {
+	width: 100%;
+	height: 47%;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	background-color: $white;
+
+	h1 {
+		padding-top: 40px;
+    	padding-left: 40px;
+    	color: $cyan;
+    	font-size: 1.5rem;
+    	font-weight: 400;
+
+    	@include xs {
+    		padding-top: 25px;
+    		padding-left: 25px;
+    		padding-bottom: 25px;
+    	}
+	}
+
+	.p-primary {
+		padding-left: 40px;
+		color: $bright-yellow;
+		font-size: 18px;
+		margin-bottom: 5px;
+
+		@include xs {
+    		padding-left: 25px;
+    		padding-bottom: 7px;
+    	}
+	}
+
+	.p-secondary {
+		padding-left: 40px;
+		padding-right: 40px;
+		line-height: 27px;
+		margin-top: 10px;
+		color: $grayish-blue;
+
+		@include xs {
+			padding-left: 25px;
+			padding-bottom: 30px;
+		}
+	}
+}
+
+.secondary-section {
+	width: 100%;
+	height: 53%;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	display: flex;
+
+	@include xs {
+		display: block;
+	}
+
+	.sub-col {
+		width: 50%;
+		height: 100%;
+		color: $white;
+
+		@include xs {
+			width: 100%;
+		}
+
+		&.one {
+			background-color: $cyan;
+			border-bottom-left-radius: 5px;
+
+			@include xs {
+				border-radius: 0;
+			}
+
+			.sub__numb {
+				margin-left: 40px;
+				margin-right: 10px;
+				font-size: 35px;
+				font-weight: 400;
+
+				@include xs {
+					margin-left: 25px;
+				}
+			}
+
+			.sub__month {
+				color: $white;
+				opacity: .5;
+			}
+
+			.sub__numb_text {
+				margin-left: 40px;
+				margin-right: 38px;
+				font-weight: 100;
+				opacity: 0.8;
+				margin-top: 8px;
+
+				@include xs {
+					margin-left: 25px;
+				}
+			}
+
+			button {
+				margin: 0 40px;
+    			width: 75%;
+    			color: $white;
+    			border: none;
+    			background-color: $bright-yellow;
+    			border-color: $bright-yellow;
+    			padding: 15px 0px;
+    			margin-top: 5px;
+    			border-radius: 5px;
+    			font-size: 16px;
+
+    			@include xs {
+					margin: 30px 25px 25px 25px;
+					width: 85%;
+				}
+			}   
+		}
+
+		&.two {
+			background-color: $cyan;
+			opacity: 0.7;
+			border-bottom-right-radius: 5px;
+
+			@include xs {
+				border-bottom-left-radius: 5px;
+			}
+
+			ul {
+				list-style: none;
+			    opacity: .7;
+			    font-weight: 100;
+			    font-size: 15px;
+			    margin-top: 10px;
+			    padding-left: 40px;
+
+			    @include xs {
+			    	padding-left: 25px;
+			    	padding-bottom: 30px;
+			    }
+
+			    li {
+			    	margin: 3px 0;
+			    }
+			}
+		}
+	}
+}
+
+.sub__h3 {
+	font-weight: 100;
+	padding: 40px 40px 10px 40px !important;
+
+	@include xs {
+		padding: 25px 40px 10px 25px !important;	}
+}
